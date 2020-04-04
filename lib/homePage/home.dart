@@ -54,6 +54,52 @@ class listContainer extends StatelessWidget {
           borderRadius: new BorderRadius.all(const Radius.circular(20.0))),
       height: 400,
       margin: EdgeInsets.only(top: 10, left: 10, right: 10, bottom: 20),
+      child: ListView(
+        children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+          ListTile(
+            leading: Icon(Icons.landscape),
+            title: Text("Landscape"),
+            subtitle: Text("Description goes here"),
+            trailing: Icon(Icons.wb_sunny),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -68,4 +114,19 @@ void buttonPressed(BuildContext context) {
         }),
   );
   Scaffold.of(context).showSnackBar(snackBar);
+}
+
+List<String> getListViewElements() {
+  var items = List<String>.generate(10, (counter) => "Item $counter");
+  return items;
+}
+
+Widget getListView() {
+  var listItems = getListViewElements();
+
+  var listView = ListView.builder(itemBuilder: (context, index) {
+    return ListTile(
+      title: Text(listItems[index]),
+    );
+  });
 }
